@@ -1,0 +1,94 @@
+/* stylelint-disable docusaurus/copyright-header */
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: rgb(33, 175, 144);
+  --ifm-color-primary-dark: rgb(33, 175, 144);
+  --ifm-color-primary-darker: rgb(31, 165, 136);
+  --ifm-color-primary-darkest: rgb(26, 136, 112);
+  --ifm-color-primary-light: rgb(70, 203, 174);
+  --ifm-color-primary-lighter: rgb(102, 212, 189);
+  --ifm-color-primary-lightest: rgb(146, 224, 208);
+  --ifm-code-font-size: 95%;
+
+  --ifm-heading-color: #000;
+  --ifm-button-border-color: #000;
+  --ifm-font-color-base-inverse: #000;
+  --ifm-link-color: var(--ifm-color-primary-dark);
+  --ifm-menu-color-active: var(--ifm-color-primary-dark);
+  --ifm-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-dark);
+  --ifm-toc-link-hover-color: var(--ifm-color-primary-dark);
+}
+
+[data-theme="dark"]:root {
+  --ifm-heading-color: #fff;
+  --ifm-button-border-color: #fff;
+  --ifm-font-color-base-inverse: #fff;
+  --ifm-color-primary: var(--ifm-color-primary-darkest);
+}
+
+.docusaurus-highlight-code-line {
+  background-color: rgb(72, 77, 91);
+  display: block;
+  margin: 0 calc(-1 * var(--ifm-pre-padding));
+  padding: 0 var(--ifm-pre-padding);
+}
+
+.logo {
+  height: 100px;
+}
+
+iframe {
+  border: none;
+  width: 100%;
+  height: 550px;
+}
+
+.logos {
+  max-width: 100%;
+  width: 250px;
+}
+
+.button + .button {
+  margin-left: 1rem;
+}
+
+[data-theme="light"] .hero,
+[data-theme="light"] .hero::after {
+  background-color: rgb(171, 255, 238);
+}
+
+[data-theme="dark"] .hero::after {
+  background-color: var(--ifm-color-primary);
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -10rem;
+  height: 10rem;
+}
+
+.token.key {
+  color: lightgreen;
+}
+
+.real {
+  margin-bottom: -2rem;
+  margin-top: 2rem;
+  font-style: italic;
+}
+
+@media screen and (max-width: 966px) {
+  .real {
+    margin-bottom: 0.3rem;
+    margin-top: 1.5rem;
+  }
+}
