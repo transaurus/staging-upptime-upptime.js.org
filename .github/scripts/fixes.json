@@ -1,0 +1,78 @@
+{
+  "description": "Repository-specific fixes for Upptime documentation - Docusaurus v3 upgrade",
+  "fixes": {
+    "package.json": [
+      {
+        "type": "replace",
+        "find": "\"@docusaurus/core\": \"2.0.0-alpha.66\"",
+        "replace": "\"@docusaurus/core\": \"^3.0.0\"",
+        "comment": "Upgrade Docusaurus core to v3 for i18n support"
+      },
+      {
+        "type": "replace",
+        "find": "\"@docusaurus/plugin-google-gtag\": \"^2.0.0-alpha.69\"",
+        "replace": "\"@docusaurus/plugin-google-gtag\": \"^3.0.0\"",
+        "comment": "Upgrade Google gtag plugin to v3"
+      },
+      {
+        "type": "replace",
+        "find": "\"@docusaurus/preset-classic\": \"2.0.0-alpha.66\"",
+        "replace": "\"@docusaurus/preset-classic\": \"^3.0.0\"",
+        "comment": "Upgrade preset-classic to v3"
+      },
+      {
+        "type": "replace",
+        "find": "\"@mdx-js/react\": \"^1.6.19\"",
+        "replace": "\"@mdx-js/react\": \"^3.0.0\"",
+        "comment": "Upgrade MDX React to v3"
+      },
+      {
+        "type": "replace",
+        "find": "\"clsx\": \"^1.1.1\"",
+        "replace": "\"clsx\": \"^2.0.0\"",
+        "comment": "Upgrade clsx to v2"
+      },
+      {
+        "type": "replace",
+        "find": "\"react\": \"^17.0.1\"",
+        "replace": "\"react\": \"^18.0.0\"",
+        "comment": "Upgrade React to v18"
+      },
+      {
+        "type": "replace",
+        "find": "\"react-dom\": \"^17.0.1\"",
+        "replace": "\"react-dom\": \"^18.0.0\"",
+        "comment": "Upgrade React DOM to v18"
+      }
+    ],
+    "docusaurus.config.js": [
+      {
+        "type": "replace",
+        "find": "  themeConfig: {\n    gtag: {\n      trackingID: \"G-TYJM49782H\",\n    },\n    algolia: {",
+        "replace": "  themeConfig: {\n    algolia: {",
+        "comment": "Remove gtag from themeConfig (moved to preset options in v3)"
+      },
+      {
+        "type": "replace",
+        "find": "    algolia: {\n      apiKey: \"b5f7196e491eb55ad9ef3ca8d04e90fd\",\n      indexName: \"upptime\",\n    },",
+        "replace": "    algolia: {\n      appId: \"BH4D9OD16A\",\n      apiKey: \"b5f7196e491eb55ad9ef3ca8d04e90fd\",\n      indexName: \"upptime\",\n    },",
+        "comment": "Add required appId for Algolia DocSearch v3"
+      },
+      {
+        "type": "replace",
+        "find": "    metadatas: [",
+        "replace": "    metadata: [",
+        "comment": "Rename metadatas to metadata (breaking change in v3)"
+      },
+      {
+        "type": "replace",
+        "find": "      \"@docusaurus/preset-classic\",\n      {",
+        "replace": "      \"@docusaurus/preset-classic\",\n      {\n        gtag: {\n          trackingID: \"G-TYJM49782H\",\n        },",
+        "comment": "Move gtag config to preset options (required in v3)"
+      }
+    ]
+  },
+  "newFiles": {
+    ".npmrc": "legacy-peer-deps=true\n"
+  }
+}
