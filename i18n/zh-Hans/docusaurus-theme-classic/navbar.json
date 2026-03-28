@@ -1,0 +1,30 @@
+{
+  "title": {
+    "message": "Upptime",
+    "description": "The title in the navbar"
+  },
+  "item.label.Docs": {
+    "message": "Docs",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Getting started": {
+    "message": "Getting started",
+    "description": "Navbar item with label Getting started"
+  },
+  "item.label.Blog": {
+    "message": "Blog",
+    "description": "Navbar item with label Blog"
+  },
+  "item.label.Example website": {
+    "message": "Example website",
+    "description": "Navbar item with label Example website"
+  },
+  "item.label.GitHub template": {
+    "message": "GitHub template",
+    "description": "Navbar item with label GitHub template"
+  },
+  "item.label.@upptime on GitHub": {
+    "message": "@upptime on GitHub",
+    "description": "Navbar item with label @upptime on GitHub"
+  }
+}

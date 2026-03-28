@@ -1,0 +1,24 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Upptime Blog",
+    "home_page_url": "https://upptime.js.org/zh-Hans/blog",
+    "description": "Upptime Blog",
+    "items": [
+        {
+            "id": "https://upptime.js.org/zh-Hans/blog/2021/01/22/github-actions-schedule-not-working",
+            "content_html": "<p>We've seen many reports of GitHub Actions workflows not triggering at the scheduled time. In fact, in the official <a href=\"https://github.com/upptime/upptime\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">upptime/upptime</a> repository, workflows scheduled for every five minutes run as slower as once every hour. This blog post is a quick summary of what we know, and what you can do.</p>\n<p>The first time we saw this was when <a href=\"https://github.com/rouilj\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">@rouilj</a> pointed it out in <a href=\"https://github.com/upptime/upptime/discussions/112\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">#112</a>:</p>\n<blockquote>\n<p>If I look at the GitHub Actions listing and select the \"Uptime CI\", I don't see it being executed every 5 minutes; it looks more like it's running every 18 minutes or so.</p>\n</blockquote>\n<p>And my reply:</p>\n<blockquote>\n<p>Hi @rouilj, unfortunately this is out of our control. We request GitHub to run the Uptime CI workflow every 5 minutes. It's added to a queue and run whenever GitHub has a machine available, sometimes this is every 7 minutes, sometimes every 15 minutes. There's really not much we can do, with the exception of manually triggering the workflow using an external scheduler.</p>\n</blockquote>\n<p>When you set up a GitHub Actions workflow with a schedule, say for once every 10 minutes, you're essneially requesting GitHub to schedule that workflow for you. <strong>There is no guarantee that the workflow will run every 10 minutes.</strong> In a discussion in the GitHub Support Community (<a href=\"https://github.community/t/no-assurance-on-scheduled-jobs/133753\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">No assurance on scheduled jobs?</a>), Github partner <a href=\"https://github.com/brightran\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">@brightran</a> said that many a times, there may be a delay when triggering the scheduled workflow:</p>\n<blockquote>\n<p>Generally, the delay time is about 3 to 10 minutes. Sometimes, it may be more, even dozens of minutes, or more than one hour.</p>\n</blockquote>\n<p>He also said that if the delay time is too long, the scheduled workflow may be not triggered at that day. Therefore, it's not recommended to use GitHub Actions scheduled workflows for production tasks that require execution guarantee.</p>\n<p>So, what can you do to guarantee your GitHub Actions scheduled workflow will run? In <a href=\"https://github.com/upptime/upptime/issues/42\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">#42</a>, <a href=\"https://github.com/belhyun\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">@belhyun</a> proposed triggering it manually:</p>\n<blockquote>\n<p>In order to execute correctly every 5 minutes, I ran a build job with jenkins and executed a <code>POST</code> request.</p>\n</blockquote>\n<p>GitHub Actions supports the <code>workflow_dispatch</code> trigger (see <a href=\"https://docs.github.com/en/actions/reference/events-that-trigger-workflows\" target=\"_blank\" rel=\"noopener noreferrer\" class=\"\">Events that trigger workflows</a> on GitHub Docs), so if you manually trigger a workflow, it will be queued to run soon-ish. This means that you can use a third-party cron scheduling service like IFTTT, Google Cloud Scheduler, Jenkins, Cronhub, etc., to make a request to the GitHub API to trigger the workflow.</p>",
+            "url": "https://upptime.js.org/zh-Hans/blog/2021/01/22/github-actions-schedule-not-working",
+            "title": "GitHub Actions workflow not triggering at scheduled time",
+            "summary": "We've seen many reports of GitHub Actions workflows not triggering at the scheduled time. In fact, in the official upptime/upptime repository, workflows scheduled for every five minutes run as slower as once every hour. This blog post is a quick summary of what we know, and what you can do.",
+            "date_modified": "2021-01-22T00:00:00.000Z",
+            "author": {
+                "name": "Anand Chowdhary",
+                "url": "https://github.com/AnandChowdhary"
+            },
+            "tags": [
+                "uptime-monitor",
+                "github-actions"
+            ]
+        }
+    ]
+}

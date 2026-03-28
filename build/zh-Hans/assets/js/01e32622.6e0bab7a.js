@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkupptime_js_org=globalThis.webpackChunkupptime_js_org||[]).push([[738],{2725(t){t.exports=JSON.parse('{"tags":[{"label":"uptime-monitor","permalink":"/zh-Hans/blog/tags/uptime-monitor","count":1},{"label":"github-actions","permalink":"/zh-Hans/blog/tags/github-actions","count":1}]}')}}]);

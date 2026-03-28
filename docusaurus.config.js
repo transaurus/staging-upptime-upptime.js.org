@@ -1,9 +1,13 @@
 module.exports = {
+  i18n: {
+    defaultLocale: "en",
+    locales: ["en", "zh-Hans"],
+  },
   title: "Upptime",
   tagline: "GitHub-powered open-source uptime monitor and status page",
   url: "https://upptime.js.org",
   baseUrl: "/",
-  onBrokenLinks: "throw",
+  onBrokenLinks: 'warn',
   favicon: "/img/icon.svg",
   organizationName: "upptime",
   projectName: "upptime.js.org",
